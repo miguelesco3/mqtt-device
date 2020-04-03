@@ -10,3 +10,6 @@
 
 
 #define INPUT_SENSOR 23
+
+#define REPORT_FREQ 20000
+#define MAX_ALARM_FREQ 5000
