@@ -21,5 +21,5 @@ bool DHTsensor::init(uint8_t pin){
 
 uint16_t DHTsensor::read(){
     float t = dht.readTemperature();
-    return (t);
+        return (t);
 }

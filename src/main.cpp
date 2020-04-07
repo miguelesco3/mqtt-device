@@ -39,8 +39,11 @@ void loop() {
   }
   if(millis()-reportTimer >= REPORT_FREQ){
     reportTimer=millis();
-    client.publish(String(MQTT_ID)+"/report", String(sensor.read()));
-    Serial.println(sensor.read());
+    if (sensor.hasChange()){
+      client.publish(String(MQTT_ID)+"/report", String(sensor.read()));
+      
+    }
+  Serial.println(sensor.read());
   }
 
 }
