@@ -6,7 +6,7 @@ class InputDevice: public Device {
         uint16_t threshold;
         long read_timer;
         long sample_rate;
-        virtual uint16_t read();
+        virtual uint16_t readtemp();
     public:
         InputDevice(uint16_t device_id, uint16_t threshold, long sample_rate):Device(device_id, INPUT_DEVICE_TYPE){
             this->sample_rate = sample_rate;
@@ -20,7 +20,7 @@ class InputDevice: public Device {
 bool InputDevice::hasChange(){
     if(millis()-this->read_timer >= this->sample_rate){
         this->read_timer = millis();
-        uint16_t temp_value = this->read();
+        uint16_t temp_value = this->readtemp();
         if(abs(temp_value - value) >= threshold){
             this->value = temp_value;
             return true;

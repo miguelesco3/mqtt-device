@@ -40,10 +40,10 @@ void loop() {
   if(millis()-reportTimer >= REPORT_FREQ){
     reportTimer=millis();
     if (sensor.hasChange()){
-      client.publish(String(MQTT_ID)+"/report", String(sensor.read()));
-      
+      // client.publish(String(MQTT_ID)+"/report", String(sensor.read()));
+      client.publish(String(MQTT_ID)+"/temperatura", "{\"temperature\":" +  String(sensor.readtemp()) + "}");
+      client.publish(String(MQTT_ID)+"/humedad", "{\"humidity\":" +  String(sensor.readhum()) + "}");
     }
-  Serial.println(sensor.read());
+  Serial.println(sensor.readtemp());
   }
-
 }
