@@ -8,6 +8,8 @@
 // #define BROKER "192.168.43.1"
 #define BROKER "192.168.43.155"
 
+int pin = 4;
+
 
 #define INPUT_SENSOR 23
 

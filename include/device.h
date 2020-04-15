@@ -1,9 +1,4 @@
-#define DEVICE_ID_KEY 0x0A
-#define DEVICE_TYPE_KEY 0x0B
-#define DEVICE_STATUS_KEY 0x0C
-#define INPUT_DEVICE_TYPE 0x10
-#define OUTPUT_DEVICE_TYPE 0x10
-#define VALUE_KEY 0x91
+#include <settings.h>
 
 class Device {
     public:

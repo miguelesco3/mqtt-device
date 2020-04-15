@@ -2,7 +2,7 @@
 #include <DHT.h>
 
 #define DHTTYPE DHT22
-DHT dht(4, DHTTYPE);
+DHT dht(pin, DHTTYPE);
 
 class DHTsensor: public InputDevice {
 private:
@@ -16,7 +16,6 @@ public:
 bool DHTsensor::init(uint8_t pin){
     this->pin = pin;
     this->read_timer = millis();
-
 }
 
 uint16_t DHTsensor::read(){

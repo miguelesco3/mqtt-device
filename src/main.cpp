@@ -25,7 +25,7 @@ void setup() {
     WiFi.begin(SSID, SSID_PASSWORD);
     client.begin(BROKER, net);
     connect(Serial, net, client);
-    sensor.init(4);
+    sensor.init(pin);
     dht.begin();
 }
 
